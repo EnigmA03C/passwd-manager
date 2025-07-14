@@ -1,9 +1,9 @@
 [project]
-name = "passw-manager"
+name = "passwd-manager"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Enigma03C",email = "sdangelo989@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
