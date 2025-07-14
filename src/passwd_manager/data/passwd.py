@@ -4,7 +4,7 @@ log = logging.getLogger(__name__)
 import sys
 
 class Password():
-    passwd_path = "src\\passw_manager\\data\\passw.yml"
+    passwd_path = "src\\passwd_manager\\data\\passwd.yml"
     def __init__(self) -> None:
         self.data: dict = {}
         try:
