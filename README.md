@@ -5,7 +5,10 @@ the way this will work is by having the code do read and write operations using 
 in the style of:
 
 passwd-m create SERVICE MAIL|USERNAME PASSWORD
+<<<<<<< HEAD
 
+=======
+>>>>>>> f56ed10bdd340291cc188a19eeb239b44a79035e
 passwd-m get SERVICE
 
 # What this is not
