@@ -5,7 +5,9 @@ the way this will work is by having the code do read and write operations using 
 in the style of:
 
 passwd create SERVICE MAIL|USERNAME PASSWORD
+
 passwd get SERVICE
+
 passwd delete SERVICE
 
 # What this is not
