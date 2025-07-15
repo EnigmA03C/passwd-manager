@@ -4,9 +4,9 @@ this project aims at creating a very simple password storage using yaml files.
 the way this will work is by having the code do read and write operations using commands
 in the style of:
 
-passwd-m create SERVICE MAIL|USERNAME PASSWORD
-
-passwd-m get SERVICE
+passwd create SERVICE MAIL|USERNAME PASSWORD
+passwd get SERVICE
+passwd delete SERVICE
 
 # What this is not
 
