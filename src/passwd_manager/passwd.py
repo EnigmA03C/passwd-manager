@@ -26,19 +26,27 @@ def main(arguments: list):
             disclaimer: inserting the same service twice using the create function will delete the previous record
             and substitute it with the new one.
             """)
+
     elif arguments[0] == "create":
-        if arguments[1] and arguments[2] and arguments[3] is not None:
+        if len(arguments) == 4:
             passwd.create(arguments[1], arguments[2], arguments[3])
         else:
             print("There are missing arguments, make sure you inserted service, mail and password correctly.")
             exit(0)
     elif arguments[0] == "get":
-        credentials = passwd.read()[arguments[1]]
-        print(f"""
-              The mail/username is: {credentials[0]}
-              and the password is: {credentials[1]}
-              """)
-        
+        if len(arguments) == 2:
+            credentials = passwd.read()[arguments[1]]
+            print(f"""
+                The mail/username is: {credentials[0]}
+                and the password is: {credentials[1]}
+                """)
+        else:
+            print("Error, please insert the correct number of arguments.")
+    elif arguments[0] == "delete":
+        if len(arguments) == 2:
+            passwd.delete(arguments[1])
+        else:
+            print("Error, please insert the correct number of arguments.")
     else:
         print("Wrong argument error, you need to use create or get, use the command 'help' to see the help page.")
 

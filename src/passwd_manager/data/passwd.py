@@ -4,7 +4,7 @@ log = logging.getLogger(__name__)
 import sys
 
 class Password():
-    passwd_path = "src\\passwd_manager\\data\\passwd.yml"
+    passwd_path = "data/passwd.yml"
     def __init__(self) -> None:
         self.data: dict = {}
         try:
@@ -23,6 +23,8 @@ class Password():
         if self.data is None:
             self.data = {service: [user, passwd]}
         else:
+            if service in self.data:
+                self.delete(service)
             self.data.update({service: [user, passwd]})
         self.save()
     
@@ -41,7 +43,16 @@ class Password():
             log.critical(f"A problem occurred with the password file: {e}")
             sys.exit(1)
     
-    def delete(self):
-        pass
+    def delete(self, record) -> int:
+        try:
+            self.data.pop(record)
+        except KeyError:
+            print(f"Record for {record} was not found.")
+            return 0
+        except AttributeError:
+            print(f"record file is empty.")
+            return 0
+        self.save()
+        return 1
 
 passwd = Password()
